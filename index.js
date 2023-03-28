@@ -1,25 +1,17 @@
-const net = new brain.NeuralNetwork()
+import { DATA } from './dataset';
+import { getAccuracy } from './getAccuracy';
 
-net.train([ 
-  {
-    input: [0 , 0],
-    output:[0]
-  },
-  {
-    input: [1 , 0],
-    output:[1]
-  },
-  {
-    input: [0 , 1],
-    output:[1]
-  },
-  {
-    input: [1 , 1],
-    output:[0]
-  }
-])
+const SPLIT = 99;
+const trainData = DATA.slice(0, SPLIT);
+const testData = DATA.slice(SPLIT + 1);
 
-const diagram = document.getElementById('diagram')
-diagram.innerHTML = brain.utilities.toSVG(net)
+const net = new brain.NeuralNetwork({
+  activation: 'sigmoid', // activation function
+  hiddenLayers: [2],
+  iterations: 20000,
+  learningRate: 0.5 
+});
+net.train(trainData);
 
-console.log(brain)
+const accuracy = getAccuracy(net, testData);
+console.log('accuracy: ', accuracy);
