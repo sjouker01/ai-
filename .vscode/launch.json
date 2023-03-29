@@ -8,12 +8,14 @@
         {
             "console": "integratedTerminal",
             "type": "node",
+            
             "request": "launch",
-            "name": "Launch Program",
+            "name": "E.V.E",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\index.js"
+            
         }
     ]
 }
