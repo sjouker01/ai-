@@ -1,4 +1,4 @@
-import { DATA } from './dataset';
+import { DATA } from '../dataset';
 import { getAccuracy } from './getAccuracy';
 
 const SPLIT = 99;
