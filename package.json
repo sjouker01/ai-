@@ -1,9 +1,0 @@
-{
-    "name": "my-project",
-    "version": "1.0.0",
-    "type": "module",
-    "dependencies": {
-      "gpu.js": "^3.0.0"
-    }
-  }
-  
